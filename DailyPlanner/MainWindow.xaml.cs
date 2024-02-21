@@ -23,19 +23,20 @@ namespace DailyPlanner
 
         public MainWindow()
         {
+
             InitializeComponent();
             datefield.SelectedDate = DateTime.Now;
             datefield.Text = datefield.SelectedDate.ToString();
             Screen();
-            
+
         }
 
-        
-        static string text = File.ReadAllText("C:\\Users\\HP\\Desktop\\Tasks.json");
-        static List<Note> tasks = JsonConvert.DeserializeObject<List<Note>>(text);
+        static List<Note> tasks = Converter.Deserialize<List<Note>>();
         static List<Note> selectedTasks = new List<Note>();
+
         public void Screen()
         {
+
             del.IsEnabled = false;
             save.IsEnabled = false;
             create.IsEnabled = true;
@@ -44,14 +45,20 @@ namespace DailyPlanner
             notedescription.Text = string.Empty;
             datefield.Text = datefield.SelectedDate.ToString();
             planlist.DisplayMemberPath = string.Empty;
-           
-            foreach (Note note in tasks)
-            {
-                if (note.NoteDate == datefield.Text)
+            try 
+            { 
+                foreach (Note note in tasks)
                 {
-                    selectedTasks.Add(note);
+                    if (note.NoteDate == datefield.Text)
+                    {
+                        selectedTasks.Add(note);
+                    }
+
                 }
-                
+            }
+            catch
+            {
+                tasks = new List<Note>();
             }
             planlist.ItemsSource = selectedTasks;
             planlist.DisplayMemberPath = "Name";
@@ -84,26 +91,21 @@ namespace DailyPlanner
             string newnotedescription = notedescription.Text;
             Note note = new Note(newnotename, newnotedescription, datefield.Text);
             tasks.Add(note);
-            Serialize();
-            return;
-        }
-
-        public void Serialize()
-        {
-            string json = JsonConvert.SerializeObject(tasks);
-            File.WriteAllText("C:\\Users\\HP\\Desktop\\Tasks.json", json);
+            Converter.Serialize(tasks);
             return;
         }
 
         private void planlist_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {   while(true) { 
-            Note selected;
-            create.IsEnabled = false;
-            save.IsEnabled = true;
-            del.IsEnabled = true;
-            selected = (Note)planlist.Items[planlist.SelectedIndex];
-            notename.Text = selected.Name;
-            notedescription.Text = selected.Description;
+        {
+            while (true)
+            {
+                Note selected;
+                create.IsEnabled = false;
+                save.IsEnabled = true;
+                del.IsEnabled = true;
+                selected = (Note)planlist.Items[planlist.SelectedIndex];
+                notename.Text = selected.Name;
+                notedescription.Text = selected.Description;
                 break;
             }
         }
@@ -127,19 +129,47 @@ namespace DailyPlanner
             Note selected = (Note)planlist.SelectedItem;
             selected.Name = notename.Text;
             selected.Description = notedescription.Text;
-            Serialize();
+            Converter.Serialize(tasks);
             return;
-            
+
         }
 
         private void del_Click(object sender, RoutedEventArgs e)
         {
             Note selected = (Note)planlist.Items[planlist.SelectedIndex];
             tasks.Remove(selected);
-            Serialize();
+            Converter.Serialize(tasks);
             Screen();
         }
     }
+
+    internal class Converter
+    {
+        public static void Serialize<T>(T tasks)
+        {
+            string json = JsonConvert.SerializeObject(tasks);
+            File.WriteAllText("C:\\Users\\HP\\Desktop\\Tasks.json", json);
+
+        }
+        public static T Deserialize<T>()
+        {
+            if (File.Exists("C:\\Users\\HP\\Desktop\\Tasks.json")) 
+            { 
+                string text = File.ReadAllText("C:\\Users\\HP\\Desktop\\Tasks.json");
+                T tasks = JsonConvert.DeserializeObject<T>(text);
+                return tasks;
+            }
+            else
+            {
+                File.Create("C:\\Users\\HP\\Desktop\\Tasks.json");
+                string text = File.ReadAllText("C:\\Users\\HP\\Desktop\\Tasks.json");
+                T tasks = JsonConvert.DeserializeObject<T>(text);
+                return tasks;
+            }
+            
+        }
+    }
+
     internal class Note
     {
         public string Name { get; set; }
