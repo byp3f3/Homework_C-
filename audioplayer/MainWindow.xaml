@@ -1,0 +1,39 @@
+﻿<Window x:Class="audioplayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:audioplayer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="backward" Content="⏮️" Grid.Row="3" VerticalAlignment="Center" Background="#FFFFC978" Click="backward_Click"/>
+        <Button x:Name="pause" Grid.Column="1" Content="⏸️" Grid.Row="3" VerticalAlignment="Center" Background="#FFFFC978" Click="pause_Click"/>
+        <Button x:Name="forward" Grid.Column="2" Content="⏭" Grid.Row="3" VerticalAlignment="Center" Background="#FFFFC978" Click="forward_Click"/>
+        <Button x:Name="repeat_but" Grid.Column="3" Content="🔂" Grid.Row="3" VerticalAlignment="Center" Background="#FFFFC978" Click="repeat_but_Click"/>
+        <Button x:Name="mix_but" Grid.Column="4" Content="🔀" Grid.Row="3" VerticalAlignment="Center" Background="#FFFFC978" Click="mix_but_Click"/>
+        <Slider x:Name="volume" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center" Margin="5"/>
+        <Slider x:Name="pos" Grid.ColumnSpan="7" Grid.Row="2" VerticalAlignment="Center" ValueChanged="pos_ValueChanged"/>
+        <MediaElement x:Name="media" LoadedBehavior="Manual" MediaOpened="media_MediaOpened"/>
+        <Button x:Name="openfolder" Content="Открыть папку с музыкой" Grid.ColumnSpan="4" Background="#FFFFC978" Click="openfolder_Click"/>
+        <Button x:Name="historybutton" Content="История прослушивания" Grid.Column="4" Grid.ColumnSpan="2" Background="#FFFFC978" Click="history_Click"/>
+        <ListBox x:Name="songlist" Grid.Row="1" Grid.ColumnSpan="7" d:ItemsSource="{d:SampleData ItemCount=5}" DisplayMemberPath="dialog.FileName" SelectionChanged="songlist_SelectionChanged"/>
+        <TextBlock x:Name="timecount" HorizontalAlignment="Left" Grid.Row="2" Text="ooooo" VerticalAlignment="Top"/>
+        <TextBlock x:Name="timemax" Grid.Column="5" HorizontalAlignment="Right" Grid.Row="2" Text="aaaaaa" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

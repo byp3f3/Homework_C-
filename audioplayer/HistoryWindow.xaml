@@ -1,0 +1,18 @@
+﻿<Window x:Class="audioplayer.HistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:audioplayer"
+        mc:Ignorable="d"
+        Title="HistoryWindow" Height="350" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="История прослушивания" TextAlignment="Center"/>
+        <ListBox x:Name="historylist" DisplayMemberPath="Name" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="historylist_SelectedChanged" />
+
+    </Grid>
+</Window>
