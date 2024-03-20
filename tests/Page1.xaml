@@ -1,0 +1,21 @@
+﻿<Page x:Class="tests.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:tests"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Grid.RowSpan="3" Source="https://n1s1.hsmedia.ru/95/90/ac/9590ac92dd78e383fb3fb404fe3d00e6/713x400_1_3dd4c1cc0484c11f4c5fa49403375f6c@1000x561_0xac120004_14119189281676465509.jpeg"/>
+        <TextBlock Text="Теста нет, но есть котята" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+
+    </Grid>
+</Page>
