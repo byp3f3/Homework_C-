@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="today.View.DayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:today.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="80">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Открыть день"/>
+                <MenuItem Header="Очистить данные"/>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <TextBlock x:Name="dateTbk" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Image x:Name="icon" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid>
+</UserControl>

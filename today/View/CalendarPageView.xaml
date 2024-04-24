@@ -1,0 +1,27 @@
+﻿<Page x:Class="today.View.CalendarPageView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:today.View" xmlns:viewmodel="clr-namespace:today.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:CalendarViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="450"
+      Title="CalendarPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="back" Content="◀" />
+        <Button x:Name="next" Grid.Column="2" Content="▶"/>
+        <TextBlock x:Name="dateTbk" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ListBox x:Name="DateList" Grid.Row="1" Grid.ColumnSpan="3"/>
+
+    </Grid>
+</Page>
