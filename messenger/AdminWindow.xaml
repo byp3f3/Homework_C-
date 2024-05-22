@@ -1,0 +1,30 @@
+﻿<Window x:Class="messenger.AdminWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:messenger"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800" Closing="Window_Closing">
+    <Grid Background="Pink">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Пользователи:" FontSize="16"/>
+        <Button x:Name="exitBut" Grid.Column="1" Grid.Row="2" Content="Выйти" Click="exitBut_Click"/>
+        <Button x:Name="sendBut" Grid.Column="3" Grid.Row="2" Content="Отправить" Click="sendBut_Click"/>
+        <TextBox x:Name="messageTbx" Grid.Column="2" Grid.Row="2" materialDesign:HintAssist.Hint="Сообщение"/>
+        <ListBox x:Name="messageLbx" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1"/>
+        <ListBox x:Name="userLbx" Grid.Row="1" Grid.RowSpan="2"/>
+        <Button x:Name="logBut" Grid.Column="1" Grid.ColumnSpan="3" Content="Посмотреть логи чата"/>
+    </Grid>
+</Window>
