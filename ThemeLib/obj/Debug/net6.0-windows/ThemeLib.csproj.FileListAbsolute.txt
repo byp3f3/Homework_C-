@@ -1,0 +1,16 @@
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\bin\Debug\net6.0-windows\ThemeLib.deps.json
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\bin\Debug\net6.0-windows\ThemeLib.dll
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\bin\Debug\net6.0-windows\ThemeLib.pdb
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\FullDictionary.baml
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\Themes\GreenTheme.baml
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\Themes\PinkTheme.baml
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\ThemeLib_MarkupCompile.cache
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\ThemeLib.g.resources
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\ThemeLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\ThemeLib.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\ThemeLib.AssemblyInfo.cs
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\ThemeLib.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\ThemeLib.dll
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\refint\ThemeLib.dll
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\ThemeLib.pdb
+C:\Users\HP\Desktop\work\c#\pr8\ThemeLib\obj\Debug\net6.0-windows\ref\ThemeLib.dll
