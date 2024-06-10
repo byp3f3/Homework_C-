@@ -1,0 +1,36 @@
+﻿<Window x:Class="pr9.SendWordWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pr9"
+        mc:Ignorable="d"
+        Title="SendWordWindow" Height="350" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Введите логин и пароль своей почты" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Логин" FontSize="20" x:Name="from"/>
+        <TextBox Grid.Row="2" materialDesign:HintAssist.Hint="Пароль" FontSize="20" x:Name="password"/>
+        <TextBlock Grid.Row="3" Text="Введите почту польчателя и тему письма" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBox Grid.Row="4" materialDesign:HintAssist.Hint="Почта получателя" FontSize="20" x:Name="to"/>
+        <TextBox Grid.Row="5" materialDesign:HintAssist.Hint="Тема" FontSize="20" x:Name="theme"/>
+        <Button Grid.Row="6" Content="Отправить" FontSize="18" Click="Button_Click"/>
+        <RichTextBox AcceptsTab="True" Grid.Row="7" VerticalContentAlignment="Top" x:Name="MyRtbx">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
+    </Grid>
+</Window>
